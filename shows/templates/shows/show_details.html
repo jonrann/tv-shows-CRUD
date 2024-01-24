@@ -1,0 +1,14 @@
+{% extends "shows/_base.html" %}
+{% block web_title %}{{show.title}}{% endblock web_title %}
+{% block content %}
+<h1>TV Show {{show.id}}</h1>
+<h2>Title: {{show.title}}</h2>
+<p>Network: {{show.network}}</p>
+<p>Release Date: {{show.release_date}}</p>
+<p>Description: {{show.description}}</p>
+
+
+<a href="{% url 'show-update' show.id %}">Edit</a>
+<a href="{% url 'show-delete' show.id %}">Delete</a>
+
+{% endblock content %}

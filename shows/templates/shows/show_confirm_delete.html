@@ -1,0 +1,13 @@
+{% extends "shows/_base.html" %}
+{% block web_title %}Confirm Delete{% endblock web_title %}
+{% block content %}
+<h1>Are you sure you want to delete this show?</h1>
+<h2>{{show.title}}</h2>
+<p>Network: {{show.network}}</p>
+<p>Release Date: {{show.release_date}}</p>
+<form action="" method='POST'>
+    {% csrf_token %}
+    <input type="submit" value="Delete">
+</form>
+<a href="{% url 'show-details' show.id %}"><button>Cancel</button></a>
+{% endblock content %}

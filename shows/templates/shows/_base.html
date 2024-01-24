@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block web_title %}{% endblock web_title %}</title>
+</head>
+<body>
+    <div>
+        <a href="{% url "show-list" %}">Home</a>
+        <a href="{% url "show-create" %}">Create Show</a>
+    </div>
+    
+    {% block content %}{% endblock content %}
+
+</body>
+</html>

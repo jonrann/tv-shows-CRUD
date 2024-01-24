@@ -1,0 +1,16 @@
+{% extends "shows/_base.html" %}
+{% block web_title %}Shows{% endblock web_title %}
+{% block content %}
+<h1>Shows</h1>
+<ul>
+    {% for show in shows %}
+    <a href="{% url 'show-details' show.id %}"><li>{{show.title}}</li></a>
+    <li>{{show.network}}</li>
+    <li>{{show.release_date}}</li>
+    <a href="{% url "show-update" show.id %}">Edit</a>
+    <a href="{% url "show-delete" show.id %}">Delete</a>
+    <hr>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
